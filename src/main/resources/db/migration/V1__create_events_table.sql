@@ -4,5 +4,5 @@ create table events(
     description text,
     
     constraint pk_events primary key (id),
-    constraint unq_name unique unq_name (name asc) visible
+    constraint unq_name unique index unq_name (name asc) visible
 ) engine=innodb character set utf8mb4 collate utf8mb4_0900_ai_ci;
