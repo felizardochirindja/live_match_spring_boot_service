@@ -1,5 +1,5 @@
 create table lineups(
-    id integer unsigned not null,
+    id int unsigned not null,
     initial boolean not null,
     position int unsigned not null,
     match_team_id int unsigned not null,

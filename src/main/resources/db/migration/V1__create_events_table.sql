@@ -1,5 +1,5 @@
 create table events(
-    id integer unsigned not null,
+    id int unsigned not null,
     name varchar(255) not null,
     description text,
     
