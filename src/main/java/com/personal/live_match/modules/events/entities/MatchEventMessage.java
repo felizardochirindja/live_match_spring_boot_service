@@ -1,6 +1,5 @@
 package com.personal.live_match.modules.events.entities;
 
-import java.time.Instant;
 import java.util.Map;
 
 import lombok.Getter;
@@ -9,10 +8,10 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class MatchEventMessage {
-    private String eventId;
-    private String matchId;
+    private Integer eventId;
+    private Integer matchId;
     private EventType type;
-    private long position;
+    private int position;
     private String eventMinute;
     private Map<String, Object> payload;
 
