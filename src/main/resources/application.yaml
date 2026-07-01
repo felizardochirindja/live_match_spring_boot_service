@@ -17,3 +17,9 @@ spring:
 
   flyway:
     enabled: true
+
+springdoc:
+  api-docs:
+    path: /docs
+  swagger-ui:
+    path: /swagger-docs
