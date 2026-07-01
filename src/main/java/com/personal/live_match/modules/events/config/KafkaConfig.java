@@ -13,6 +13,7 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.lang.NonNull;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,6 +23,7 @@ public class KafkaConfig {
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
 
+    @NonNull
     private Map<String, Object> consumerConfig(String groupId) {
         Map<String, Object> config = new HashMap<>();
 
@@ -43,6 +45,7 @@ public class KafkaConfig {
     }
 
     @Bean
+    @NonNull
     public ConsumerFactory<String, MatchEventMessage> databaseConsumerFactory() {
         return new DefaultKafkaConsumerFactory<>(consumerConfig("database"));
     }
