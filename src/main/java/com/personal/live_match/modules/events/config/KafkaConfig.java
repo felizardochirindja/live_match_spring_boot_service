@@ -48,7 +48,7 @@ public class KafkaConfig {
     }
 
     @Bean
-    public ConcurrentKafkaListenerContainerFactory<String, MatchEventMessage> databaseKafkaListenerContainerFactory() {
+    public ConcurrentKafkaListenerContainerFactory<String, MatchEventMessage> databaseContainerFactory() {
         ConcurrentKafkaListenerContainerFactory<String, MatchEventMessage> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(databaseConsumerFactory());
         factory.setConcurrency(3);
