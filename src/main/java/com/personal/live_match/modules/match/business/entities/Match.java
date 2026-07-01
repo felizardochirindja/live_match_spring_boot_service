@@ -42,6 +42,7 @@ public class Match {
     }
 
     public Match(Integer id, String title, String notes, Stage stage) {
+        this.id = id;
         this.title = title;
         this.notes = notes;
         this.stage = stage;
