@@ -1,4 +1,4 @@
-package com.personal.live_match.modules.events.config;
+package com.personal.live_match.modules.events.configs;
 
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.config.TopicBuilder;
@@ -54,6 +54,21 @@ public class KafkaConfig {
     public ConcurrentKafkaListenerContainerFactory<String, MatchEventMessage> databaseContainerFactory() {
         ConcurrentKafkaListenerContainerFactory<String, MatchEventMessage> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(databaseConsumerFactory());
+        factory.setConcurrency(3);
+
+        return factory;
+    }
+
+    @Bean
+    @NonNull
+    public ConsumerFactory<String, MatchEventMessage> cacheConsumerFactory() {
+        return new DefaultKafkaConsumerFactory<>(consumerConfig("cache"));
+    }
+
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<String, MatchEventMessage> cacheContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, MatchEventMessage> factory = new ConcurrentKafkaListenerContainerFactory<>();
+        factory.setConsumerFactory(cacheConsumerFactory());
         factory.setConcurrency(3);
 
         return factory;
