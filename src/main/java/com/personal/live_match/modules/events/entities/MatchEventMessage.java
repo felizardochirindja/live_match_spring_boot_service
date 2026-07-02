@@ -16,12 +16,16 @@ public class MatchEventMessage {
     private Map<String, Object> payload;
 
     public enum EventType {
-        GOAL,
+        MATCH_START,
+        MATCH_END,
+        GOAL_HOME,
+        GOAL_AWAY,
         YELLOW_CARD,
         RED_CARD,
         SUBSTITUTION,
         HALF_TIME,
         FULL_TIME,
-        VAR_REVIEW
+        VAR_REVIEW,
+        MINUTE_UPDATE
     }
 }
