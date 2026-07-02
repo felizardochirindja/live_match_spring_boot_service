@@ -1,4 +1,4 @@
-package com.personal.live_match.modules.shared.services;
+package com.personal.live_match.modules.cache.services;
 
 import java.time.Duration;
 import java.util.Map;
@@ -6,6 +6,8 @@ import java.util.Optional;
 
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+
+import com.personal.live_match.modules.cache.entities.MatchState;
 
 import lombok.RequiredArgsConstructor;
 

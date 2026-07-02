@@ -1,4 +1,4 @@
-package com.personal.live_match.modules.shared.services;
+package com.personal.live_match.modules.cache.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

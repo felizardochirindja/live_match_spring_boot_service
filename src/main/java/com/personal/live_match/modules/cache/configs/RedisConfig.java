@@ -1,4 +1,4 @@
-package com.personal.live_match.modules.shared.configs;
+package com.personal.live_match.modules.cache.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
