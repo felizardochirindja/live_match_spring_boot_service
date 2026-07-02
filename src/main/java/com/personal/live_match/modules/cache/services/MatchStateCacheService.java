@@ -7,7 +7,7 @@ import java.util.Optional;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
-import com.personal.live_match.modules.cache.entities.MatchState;
+import com.personal.live_match.modules.stream.entities.MatchState;
 
 import lombok.RequiredArgsConstructor;
 

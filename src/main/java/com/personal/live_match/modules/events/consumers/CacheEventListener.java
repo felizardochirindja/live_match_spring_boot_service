@@ -3,9 +3,9 @@ package com.personal.live_match.modules.events.consumers;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
-import com.personal.live_match.modules.cache.entities.MatchState;
 import com.personal.live_match.modules.cache.services.MatchStateCacheService;
 import com.personal.live_match.modules.events.entities.MatchEventMessage;
+import com.personal.live_match.modules.stream.entities.MatchState;
 
 import lombok.RequiredArgsConstructor;
 
