@@ -1,4 +1,4 @@
-package com.personal.live_match.modules.cache.entities;
+package com.personal.live_match.modules.stream.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
