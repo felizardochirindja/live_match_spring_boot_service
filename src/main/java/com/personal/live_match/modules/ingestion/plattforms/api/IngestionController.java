@@ -1,5 +1,6 @@
 package com.personal.live_match.modules.ingestion.plattforms.api;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping(value = "/api/ingestion/events")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequiredArgsConstructor
 public class IngestionController {
     private final KafkaTemplate<String, MatchEventMessage> kafkaTemplate;
