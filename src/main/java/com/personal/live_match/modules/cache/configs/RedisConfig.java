@@ -32,6 +32,7 @@ public class RedisConfig {
         MatchStateSubscriber subscriber
     ) {
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();
+        
         container.setConnectionFactory(factory);
         container.addMessageListener(subscriber, new PatternTopic("match:*:state"));
 
