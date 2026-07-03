@@ -39,9 +39,9 @@ public class KafkaConfig {
     @Bean
     public NewTopic matchEvents() {
         return TopicBuilder.name("match_events")
-                .partitions(3)
-                .replicas(1)
-                .build();
+            .partitions(3)
+            .replicas(1)
+            .build();
     }
 
     @Bean
