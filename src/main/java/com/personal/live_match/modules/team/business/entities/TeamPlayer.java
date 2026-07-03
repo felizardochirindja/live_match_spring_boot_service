@@ -33,7 +33,7 @@ public class TeamPlayer {
     private Role role;
 
     public enum Role {
-        GUARDA_REDES
+        GOAL_KEEPER
     }
 
     public TeamPlayer(Team team, Player player, Role role) {

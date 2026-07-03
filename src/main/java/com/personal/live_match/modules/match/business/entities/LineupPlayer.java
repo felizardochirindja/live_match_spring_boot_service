@@ -35,7 +35,7 @@ public class LineupPlayer {
     private Role role;
 
     public enum Role {
-        GUARDA_REDES
+        GOAL_KEEPER
     }
 
     public LineupPlayer(Lineup lineup, Player player, Role role) {
