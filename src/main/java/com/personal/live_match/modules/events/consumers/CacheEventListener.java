@@ -27,13 +27,13 @@ public class CacheEventListener {
         MatchState currentState = cacheService.getMatchState(matchId)
             .orElseGet(() -> new MatchState(0, 0, "NOT_STARTED", "0"));
 
-        MatchState updatedState = applyEvent(currentState, event);
+        MatchState updatedState = createState(currentState, event);
 
         cacheService.saveMatchState(matchId, updatedState);
         publisherService.publishMatchState(matchId, updatedState);
     }
 
-    private MatchState applyEvent(MatchState state, MatchEventMessage event) {
+    private MatchState createState(MatchState state, MatchEventMessage event) {
         switch (event.getType()) {
             case GOAL_HOME:
                 return new MatchState(
