@@ -17,7 +17,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class MatchStateSubscriber implements MessageListener {
     private final ObjectMapper objectMapper;
-
     private final ConcurrentHashMap<Integer, CopyOnWriteArrayList<SseEmitter>> emitters = new ConcurrentHashMap<>();
 
     public SseEmitter subscribe(Integer matchId) {
