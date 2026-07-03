@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.personal.live_match.modules.events.entities.MatchEventMessage;
 import com.personal.live_match.modules.ingestion.plattform.api.payloads.RegisterEventPayload;
 import com.personal.live_match.modules.ingestion.plattform.api.responses.MatchEventResponse;
-import com.personal.live_match.modules.match.repositories.EventRepository;
-import com.personal.live_match.modules.match.repositories.MatchRepository;
 
 import lombok.RequiredArgsConstructor;
 
