@@ -4,7 +4,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.listener.PatternTopic;
+import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+
+import com.personal.live_match.modules.cache.services.MatchStateSubscriber;
 
 @Configuration
 public class RedisConfig {
@@ -20,5 +24,17 @@ public class RedisConfig {
         template.setHashValueSerializer(new StringRedisSerializer());
 
         return template;
+    }
+
+    @Bean
+    public RedisMessageListenerContainer redisContainer(
+        RedisConnectionFactory factory,
+        MatchStateSubscriber subscriber
+    ) {
+        RedisMessageListenerContainer container = new RedisMessageListenerContainer();
+        container.setConnectionFactory(factory);
+        container.addMessageListener(subscriber, new PatternTopic("match:*:state"));
+
+        return container;
     }
 }
