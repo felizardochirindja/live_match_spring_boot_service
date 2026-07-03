@@ -4,6 +4,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 import com.personal.live_match.modules.cache.services.MatchStateCacheService;
+import com.personal.live_match.modules.cache.services.MatchStatePublisher;
 import com.personal.live_match.modules.events.entities.MatchEventMessage;
 import com.personal.live_match.modules.stream.entities.MatchState;
 
@@ -13,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CacheEventListener {
     private final MatchStateCacheService cacheService;
+    private final MatchStatePublisher publisherService;
 
     @KafkaListener(
         topics = "match_events",
@@ -28,6 +30,7 @@ public class CacheEventListener {
         MatchState updatedState = applyEvent(currentState, event);
 
         cacheService.saveMatchState(matchId, updatedState);
+        publisherService.publishMatchState(matchId, updatedState);
     }
 
     private MatchState applyEvent(MatchState state, MatchEventMessage event) {
