@@ -1,11 +1,11 @@
-package com.personal.live_match.modules.ingestion.plattform.api;
+package com.personal.live_match.modules.ingestion.plattforms.api;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.personal.live_match.modules.events.entities.MatchEventMessage;
-import com.personal.live_match.modules.ingestion.plattform.api.payloads.RegisterEventPayload;
-import com.personal.live_match.modules.ingestion.plattform.api.responses.MatchEventResponse;
+import com.personal.live_match.modules.ingestion.plattforms.api.payloads.RegisterEventPayload;
+import com.personal.live_match.modules.ingestion.plattforms.api.responses.MatchEventResponse;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 @RequestMapping(value = "/api/ingestion/events")
 @RequiredArgsConstructor
-public class IngestitionController {
+public class IngestionController {
     private final KafkaTemplate<String, MatchEventMessage> kafkaTemplate;
 
     @PostMapping

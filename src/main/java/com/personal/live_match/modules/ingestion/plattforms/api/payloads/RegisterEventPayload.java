@@ -1,4 +1,4 @@
-package com.personal.live_match.modules.ingestion.plattform.api.payloads;
+package com.personal.live_match.modules.ingestion.plattforms.api.payloads;
 
 public record RegisterEventPayload(
     Integer eventId,
