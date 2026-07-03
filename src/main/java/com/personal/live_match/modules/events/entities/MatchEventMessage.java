@@ -2,11 +2,13 @@ package com.personal.live_match.modules.events.entities;
 
 import java.util.Map;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 public class MatchEventMessage {
     private Integer eventId;
     private Integer matchId;
