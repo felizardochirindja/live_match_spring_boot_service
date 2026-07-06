@@ -15,6 +15,7 @@ public class MatchStatePublisher {
     private final RedisTemplate<String, Object> redisTemplate;
     private final ObjectMapper objectMapper;
 
+    @SuppressWarnings("null")
     public void publishMatchState(Integer matchId, MatchState state) {
         try {
             String json = objectMapper.writeValueAsString(state);
