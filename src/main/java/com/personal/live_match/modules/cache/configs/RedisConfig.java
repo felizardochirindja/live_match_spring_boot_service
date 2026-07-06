@@ -10,6 +10,8 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import com.personal.live_match.modules.cache.services.MatchStateSubscriber;
 
+import lombok.NonNull;
+
 @Configuration
 public class RedisConfig {
     @Bean
@@ -28,8 +30,8 @@ public class RedisConfig {
 
     @Bean
     public RedisMessageListenerContainer redisContainer(
-        RedisConnectionFactory factory,
-        MatchStateSubscriber subscriber
+        @NonNull RedisConnectionFactory factory,
+        @NonNull MatchStateSubscriber subscriber
     ) {
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();
         
