@@ -32,6 +32,7 @@ public class MatchStateSubscriber implements MessageListener {
     }
 
     @Override
+    @SuppressWarnings("null")
     public void onMessage(Message message, byte[] pattern) {
         String channel = new String(message.getChannel());
         Integer matchId = extractMatchId(channel);
@@ -57,8 +58,10 @@ public class MatchStateSubscriber implements MessageListener {
 
     private void removeEmitter(Integer matchId, SseEmitter emitter) {
         var matchEmitters = emitters.get(matchId);
+        
         if (matchEmitters != null) {
             matchEmitters.remove(emitter);
+            
             if (matchEmitters.isEmpty()) {
                 emitters.remove(matchId);
             }
